@@ -1,0 +1,67 @@
+## APIVersion: 100025 100026
+; ## APIVersion: 100022 100023
+## Title: LibAddonMenu-2.0
+## Version: 2.0 r26
+## AddOnVersion: 26
+## Author: Seerah, sirinsidiator, et al.
+## Contributors: votan, merlight, Garkin, Randactyl, KuroiLight, silvereyes333, Baertram, kyoma
+## Description: A library to aid in the creation of option panels.
+##
+## This Add-on is not created by, affiliated with or sponsored by ZeniMax Media Inc. or its affiliates. 
+## The Elder Scrolls® and related logos are registered trademarks or trademarks of ZeniMax Media Inc. in the United States and/or other countries. 
+## All rights reserved
+##
+## You can read the full terms at https://account.elderscrollsonline.com/add-on-terms
+
+; Added this directive to force the game to find a standalone LibStub add-on for the LAM-2.0 add-on. This eliminates the need for 
+; LAM-2.0 to embed its own LibStub folder.
+## DependsOn: LibStub
+
+; LibStub\LibStub.lua
+; This embedding of naked (i.e. no manifest) .lua add-ons is, in my opinion, a poor packaging structure because not only is the 
+; the embedded LibStub code from an r4 version but the AddOnVersion number for the standalone LibStub(r5) version that is supposed 
+; to be loading LAM-2.0 is 5; however, the AddOnVersion number for LAM-2.0 is 26 and because the embedded LibStub is naked, that 26 
+; value is the only AddOnVersion number the game knows of as it tries to load LAM-2.0!
+; I do not know how the game deals with these inconsistencies as it loads add-ons so these suppositions of mine could be far away 
+; from what really happens in the game.
+
+; LibAddonMenu-2.0\LibAddonMenu-2.0.lua
+
+; LibAddonMenu-2.0\controls\panel.lua
+; LibAddonMenu-2.0\controls\submenu.lua
+; LibAddonMenu-2.0\controls\button.lua
+; LibAddonMenu-2.0\controls\checkbox.lua
+; LibAddonMenu-2.0\controls\colorpicker.lua
+; LibAddonMenu-2.0\controls\custom.lua
+; LibAddonMenu-2.0\controls\description.lua
+; LibAddonMenu-2.0\controls\dropdown.lua
+; LibAddonMenu-2.0\controls\editbox.lua
+; LibAddonMenu-2.0\controls\header.lua
+; LibAddonMenu-2.0\controls\slider.lua
+; LibAddonMenu-2.0\controls\texture.lua
+; LibAddonMenu-2.0\controls\iconpicker.lua
+; LibAddonMenu-2.0\controls\divider.lua
+
+; Eliminates extra, unnecessary directory levels
+LibAddonMenu-2.0.lua
+
+controls\panel.lua
+controls\submenu.lua
+controls\button.lua
+controls\checkbox.lua
+controls\colorpicker.lua
+controls\custom.lua
+controls\description.lua
+controls\dropdown.lua
+controls\editbox.lua
+controls\header.lua
+controls\slider.lua
+controls\texture.lua
+controls\iconpicker.lua
+controls\divider.lua
+
+; The mistakes in the original LAM-2.0.txt manifest file have been corrected and their originals commented out so you can see the 
+; changes more easily. This modified manifest removes the naked (i.e. no manifest file) LibAddonMenu.lua file out of its own 
+; folder and combines it and its manifest file within the highest level LibAddonMenu-2.0 folder. This eliminates many extra 
+; directory searches and ensures that the LAM-2.0 folder contains both a main .lua and a manifest file. Please refer to the ESOUI 
+; wiki Packaging section for more information.
