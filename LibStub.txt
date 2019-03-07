@@ -1,0 +1,13 @@
+## APIVersion: 100025 100026
+## Title: LibStub
+## Description: Universal Library Stub
+## Credits: Kaelten, Cladhaire, ckknight, Mikk, Ammo, Nevcairiel, ported to ESO by Seerah
+## Version: 1.0 r5
+## AddOnVersion: 5
+
+; LibStub\LibStub.lua
+LibStub.lua
+
+; This modified manifest removes the naked (i.e. no manifest file) LibStub.lua file out of its own folder and combines it and its 
+; manifest file within the highest level LibStub folder. This eliminates an extra directory level search and ensures that the 
+; LibStub folder contains both a .lua and a manifest file. Please refer to the ESOUI wiki Packaging section for more information.
